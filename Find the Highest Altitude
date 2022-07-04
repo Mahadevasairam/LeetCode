@@ -1,0 +1,15 @@
+class Solution {
+    public int largestAltitude(int[] gain) {
+        ArrayList<Integer> ar = new ArrayList<Integer>();
+        int count = 0;int n = gain.length;
+        ar.add(0);
+        for(int i =0;i<gain.length;i++){
+            count = count + gain[i];
+            ar.add(count);
+        }
+        Collections.sort(ar);
+        return ar.get(n);
+      
+        
+    }
+}
