@@ -1,0 +1,31 @@
+class Solution {
+    public int calPoints(String[] ops) {
+        int n = 0; int result = 0;int i =0;
+        Stack<Integer> stack = new Stack<Integer>();
+        while(n<ops.length){
+            switch(ops[n]){
+                case "C": 
+                    stack.pop();
+                    i--;
+                    n++;
+                    break;
+                case "D":
+                    int a = stack.get(i-1);
+                    stack.push(2*a);
+                    i++;
+                    n++;
+                    break;
+                case "+":
+                    stack.push(stack.get(i-2)+stack.get(i-1));
+                    i++;
+                    n++;
+                    break;
+                default:
+                    stack.push(Integer.parseInt(ops[n]));i++; n++;break;
+            }
+        }
+        for(int j =0;j<stack.size();j++) result = result + stack.get(j);
+       
+     return result;   
+    }
+}
