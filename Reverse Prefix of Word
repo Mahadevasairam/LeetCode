@@ -1,0 +1,22 @@
+class Solution {
+    public String reversePrefix(String word, char ch) {
+        char[] c = word.toCharArray();int occurence = 0;int index = 0;
+        //finding index of first occurence
+        for(int i=0;i<c.length;i++){
+            if(c[i]== ch){
+                occurence = i;
+                break;
+            }
+        }
+        //reversing the string
+        while(index<occurence){
+            char temp = c[index];
+            c[index]=c[occurence];
+            c[occurence]=temp;
+            index++;
+            occurence--;
+        }
+        
+    return String.valueOf(c);
+    }
+}
