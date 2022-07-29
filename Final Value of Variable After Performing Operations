@@ -1,0 +1,15 @@
+class Solution {
+    public int finalValueAfterOperations(String[] operations) {
+        int X = 0; int i = 0;
+        while(i<operations.length){
+            switch(operations[i]){
+                case "X++": X++; break;
+                case "++X": ++X; break;
+                case "--X": --X; break;
+                case "X--": X--; break;
+            }
+            i++;
+        }
+    return X;
+    }
+}
